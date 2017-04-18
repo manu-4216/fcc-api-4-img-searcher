@@ -20,7 +20,7 @@ function getPageFromArray (array, page) {
 
 /////////////////////////////////////////////////////////////////////////////
 function getImages (query, page) {
-    var clientID = 'ebb9928a2846267'
+    var clientID = process.env.CLIENT_ID // from imgur
     
     var config = {
         headers: {Authorization: 'Client-ID ' + clientID}

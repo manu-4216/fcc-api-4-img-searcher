@@ -3,14 +3,12 @@ var express = require('express'),
     apiRouter = require('./routes/api'),
     mongoose = require('mongoose'),
     bluebird = require('bluebird')
-    
-    //mongoose.Promise = bluebird;
 
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+app.set('port', process.env.PORT || 3000)
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jade')
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -22,10 +20,11 @@ function logger (req, res, next) {
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(logger);
-  mongoose.set('debug', true);
-  mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
-  mongoose.connect(process.env.DB_URI);
+  app.use(logger)
+  mongoose.Promise = bluebird
+  mongoose.set('debug', true)
+  mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'))
+  mongoose.connect(process.env.DB_URI)
 }
 
 // Have a landing page explainging how it works
@@ -34,12 +33,12 @@ app.get('/', function (req, res) {
 });
 
 // Use the router for any api endpoint
-app.use('/api', apiRouter);
+app.use('/api', apiRouter)
 
 // 404: Not found
 app.use(function(req, res, next){
-    res.status(404).json({ERROR: 'Page not found.'});
+    res.status(404).json({ERROR: 'Page not found.'})
 });
 
-app.listen(app.get('port'));
-console.log('Express server listening on port ' + app.get('port'));
+app.listen(app.get('port'))
+console.log('Express server listening on port ' + app.get('port'))
