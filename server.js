@@ -27,7 +27,7 @@ mongoose.connect(process.env.DB_URI)
 
 // Have a landing page explainging how it works
 app.get('/', function (req, res) {
-  res.send('You\'re home. Take a look inside /api route')
+  res.sendFile(path.join(__dirname, 'public/index.html'))
 });
 
 // Use the router for any api endpoint

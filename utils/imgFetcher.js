@@ -19,7 +19,7 @@ function getPageFromArray (array, page) {
 
 
 /////////////////////////////////////////////////////////////////////////////
-function getImages (query, page) {
+module.exports = function (query, page) {
     var clientID = process.env.CLIENT_ID // from imgur
     
     var config = {
@@ -54,4 +54,3 @@ function getImages (query, page) {
     })
 }
 
-module.exports = getImages
