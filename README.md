@@ -1,6 +1,6 @@
-##Image Search Abstraction Laye
+## Image Search Abstraction Layer
 
-Objective: Build a full stack JavaScript app that allows you to search for images and deploy it to Heroku
+Objective: Build a full stack JavaScript app that allows you to search for images and browse recent search queries, and then deploy it to Heroku
 
 **User Stories:**
 
