@@ -6,4 +6,4 @@ var searchesSchema = new Schema({
     created: { type: Date, default: Date.now }
 })
 
-mongoose.model('searches', searchesSchema)
+module.exports = mongoose.model('searches', searchesSchema)

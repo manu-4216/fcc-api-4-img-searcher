@@ -6,6 +6,8 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "axios": "^0.16.1",
+    "bluebird": "^3.5.0",
     "express": "*",
     "jade": "*",
     "mongoose": "^4.9.5"
