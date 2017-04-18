@@ -17,15 +17,13 @@ function logger (req, res, next) {
     console.log(req.method, req.originalUrl);
     next(); 
 }
+app.use(logger)
 
-// development only
-if ('development' == app.get('env')) {
-  app.use(logger)
-  mongoose.Promise = bluebird
-  mongoose.set('debug', true)
-  mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'))
-  mongoose.connect(process.env.DB_URI)
-}
+// Setup mongoose
+mongoose.Promise = bluebird
+mongoose.set('debug', true)
+mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'))
+mongoose.connect(process.env.DB_URI)
 
 // Have a landing page explainging how it works
 app.get('/', function (req, res) {
