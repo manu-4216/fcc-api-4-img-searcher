@@ -11,3 +11,5 @@ Objective: Build a full stack JavaScript app that allows you to search for image
 There are 2 endpoints, on the /api endpoint:
  - /api/search/:query
  - /api/recent
+ 
+ 
